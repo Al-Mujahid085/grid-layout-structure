@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid area define</title>
+        <style>
+            .header,
+            .nav,
+            .main,
+            .sidebar,
+            .advertise,
+            .footer{
+                border: 1px solid tomato;
+                background-color: bisque;
+            }
+            .header{
+                grid-area: header;
+            }
+            .nav{
+                grid-area: nav;
+
+            }
+            .main{
+                grid-area: main;
+            }
+            .sidebar{
+                grid-area: sidebar;
+            }
+            .advertise{
+                grid-area: advertise;
+            }
+            .footer{
+                grid-area: footer;
+            }
+            .container{
+                display: grid;
+                gap: 20px;
+                grid-template-areas: 
+                "header header header header"
+                "nav main main sidebar"
+                "nav main main sidebar"
+                "footer footer footer footer"
+                ;
+
+            }
+            @media screen and (max-width:576px) {
+                .container{
+                    grid-template-areas: 
+                    "header"
+                    "nav"
+                    "sidebar"
+                    "advertise"
+                    "main"
+                    "footer"
+
+                    ;
+                }
+            }
+        </style>
+</head>
+
+<body class="container">
+    <div class="header">
+        <h1>header</h1>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li>nav-1</li>
+            <li>nav-2</li>
+            <li>nav-3</li>
+
+        </ul>
+    </nav>
+    <main class="main">
+        <artical>
+            <h4>Artical-1</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti esse omnis pariatur nihil accusantium
+                reprehenderit voluptatum error facilis ipsa repudiandae. Pariatur asperiores eos cupiditate consectetur
+                distinctio magni cum quos obcaecati.</p>
+        </artical>
+        <artical>
+            <h4>Artical-2</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, deserunt odio eius aliquid unde id
+                praesentium amet quo voluptatibus. Beatae dolorem labore distinctio vel neque atque non tempora sit
+                minima.</p>
+        </artical>
+    </main>
+    <aside>
+        <div class="sidebar">
+            <h5>sidebar</h5>
+        </div>
+        <div class="advertise">
+            <h5>advertise</h5>
+        </div>
+    </aside>
+    <footer class="footer">
+        <h5>
+            footer</h5>
+    </footer>
+
+
+</body>
+
+</html>
